@@ -4,8 +4,10 @@ import br.com.caminha.control.CarRepository;
 import br.com.caminha.entity.Car;
 import br.com.caminha.entity.Specification;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+@Stateless
 public class CarManufacturer {
 
     @Inject
