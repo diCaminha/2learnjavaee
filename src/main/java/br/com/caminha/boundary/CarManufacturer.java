@@ -4,10 +4,15 @@ import br.com.caminha.control.CarRepository;
 import br.com.caminha.entity.Car;
 import br.com.caminha.entity.Specification;
 
+import javax.inject.Inject;
+
 public class CarManufacturer {
 
-    private final CarFactory carFactory = new CarFactory();
-    private final CarRepository carRepository = new CarRepository();
+    @Inject
+    CarFactory carFactory;
+
+    @Inject
+    CarRepository carRepository;
 
     public Car manufactureCar(Specification specification) {
         Car car = carFactory.createCar(specification);
