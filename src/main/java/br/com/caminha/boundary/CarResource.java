@@ -23,7 +23,6 @@ public class CarResource {
     @GET
     public JsonArray getCars() {
         List<Car> cars = carManufacturer.retrieveCars();
-
         return cars.stream()
                 .map(c -> Json.createObjectBuilder()
                         .add("id", c.getIdentifier())
