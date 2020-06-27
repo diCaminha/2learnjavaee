@@ -6,6 +6,7 @@ import br.com.caminha.entity.Specification;
 import br.com.caminha.exposers.annotations.DefaultColor;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -60,5 +61,10 @@ public class CarFactory {
         return Json.createObjectBuilder()
                 .add("engine", specification.getEngineType().toString())
                 .build();
+    }
+
+    @PreDestroy
+    public void closeClient() {
+        client.close();
     }
 }
